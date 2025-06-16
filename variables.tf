@@ -1,18 +1,13 @@
 variable "GOOGLE_PROJECT" {
-    type = string
-    default = "k8s-learning"
-    description = "Google project name"
-
+  description = "Google project"
+  type        = string
 }
-
 variable "GOOGLE_REGION" {
-    type = list(string)
-    default = [ "europe-central2-a" ]
-    description = "Google region"  
+  description = "Google region"
+  type        = string
 }
-
-variable "GRE_NUM_NODES" {
+variable "GKE_NUM_NODES" {
+  description = "Number of nodes in GKE cluster"
   type        = number
   default     = 2
-  description = "Number of nodes in GKE cluster"
 }

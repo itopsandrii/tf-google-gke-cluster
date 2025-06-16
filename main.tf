@@ -1,6 +1,6 @@
-module "gke_cluster" {
-  source         = "github.com/itopsandrii/tf-google-gke-cluster"
-  GOOGLE_REGION  = var.GOOGLE_REGION[0]
-  GOOGLE_PROJECT = var.GOOGLE_PROJECT
-  GRE_NUM_NODES  = var.GRE_NUM_NODES
+resource "google_container_cluster" "main" {
+  name               = gke_cluster
+  project            = var.GOOGLE_PROJECT
+  location           = var.GOOGLE_REGION
+  initial_node_count = var.GKE_NUM_NODES
 }
